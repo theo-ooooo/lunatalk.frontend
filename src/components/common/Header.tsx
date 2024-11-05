@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch, BiSolidUser } from "react-icons/bi";
 import { PiBagSimpleBold } from "react-icons/pi";
-
 export default function Header() {
   return (
     <header className='py-1 px-3 flex flex-row items-center justify-between'>
@@ -19,6 +18,9 @@ export default function Header() {
         </Link>
         <Link href={"/cart"}>
           <PiBagSimpleBold size={24} />
+        </Link>
+        <Link href={"/mypage"}>
+          <BiSolidUser size={24} />
         </Link>
       </div>
     </header>
