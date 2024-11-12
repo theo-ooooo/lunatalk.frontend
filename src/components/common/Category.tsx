@@ -16,7 +16,7 @@ export default function Category({ uuid, name }: Categories) {
     } else {
       setActive(false);
     }
-  }, [params]);
+  }, [params, uuid]);
 
   return (
     <li

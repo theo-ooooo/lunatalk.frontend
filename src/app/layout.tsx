@@ -18,7 +18,6 @@ export default function RootLayout({
       <body>
         <main className='max-w-[600px] mx-auto'>
           <Header />
-          <Menu />
           {children}
         </main>
       </body>

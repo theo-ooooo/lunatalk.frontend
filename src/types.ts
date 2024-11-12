@@ -19,6 +19,17 @@ export interface AppBase {
   product_category: Categories[];
 }
 
+export interface MainProductCategory {
+  name: string;
+  image: {
+    file_name: string;
+    height: number;
+    width: number;
+    url: string;
+  };
+  uuid: string;
+}
+
 export interface Response<T> {
   message: string;
   result: T;

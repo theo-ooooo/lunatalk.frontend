@@ -9,18 +9,18 @@ export default function Header() {
     <header className='py-1 px-3 flex flex-row items-center justify-between'>
       <div>
         <Link href={"/"}>
-          <Image src='/logo.webp' alt='logo' width={100} height={24} />
+          <Image src='/logo.webp' alt='logo' width={90} height={24} />
         </Link>
       </div>
       <div className='flex gap-3'>
         <Link href={"/search"}>
-          <BiSearch size={24} />
+          <BiSearch size={22} />
         </Link>
         <Link href={"/cart"}>
-          <PiBagSimpleBold size={24} />
+          <PiBagSimpleBold size={22} />
         </Link>
         <Link href={"/mypage"}>
-          <BiSolidUser size={24} />
+          <BiSolidUser size={22} />
         </Link>
       </div>
     </header>
