@@ -1,4 +1,4 @@
-import GetMainProductCategory from "@/lib/api/main";
+import { GetMainProductCategory } from "@/lib/api/main";
 import Link from "next/link";
 import Image from "next/image";
 

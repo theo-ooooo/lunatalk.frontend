@@ -1,29 +1,23 @@
 "use server";
 
-import { Response, MainProductCategory } from "@/types";
+import { Response, MainProductCategory, Product } from "@/types";
+import Fetch from "../fetch";
 
-export default async function GetMainProductCategory(): Promise<
-  MainProductCategory[]
-> {
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_API_URL}/api/front/v1/pages/main/main-product-category`,
-      {
-        headers: {
-          "request-client-type": "0100010",
-          Accept: "application/json",
-        },
-      }
-    );
+export async function GetMainProductCategory(): Promise<MainProductCategory[]> {
+  return Fetch<MainProductCategory[]>(
+    "/api/front/v1/pages/main/main-product-category",
+    { next: { revalidate: 60 } }
+  );
+}
 
-    if (!response.ok) {
-      throw new Error(`base-data fail ${response.statusText}`);
-    }
+export async function GetMainBestProduct(): Promise<Product[]> {
+  return Fetch<Product[]>("/api/front/v1/pages/main/main-product-best-item", {
+    next: { revalidate: 60 },
+  });
+}
 
-    const result: Response<MainProductCategory[]> = await response.json();
-
-    return result?.result;
-  } catch (e) {
-    throw e;
-  }
+export async function GetMainNewProduct(): Promise<Product[]> {
+  return Fetch<Product[]>("/api/front/v1/pages/main/main-product-new-item", {
+    next: { revalidate: 60 },
+  });
 }
