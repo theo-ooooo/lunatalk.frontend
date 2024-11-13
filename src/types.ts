@@ -56,6 +56,11 @@ export interface Product {
   uuid: string;
 }
 
+export interface BestProduct {
+  uuid: string;
+  product: Product;
+}
+
 export interface Response<T> {
   message: string;
   result: T;

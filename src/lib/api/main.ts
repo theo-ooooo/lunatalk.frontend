@@ -1,6 +1,6 @@
 "use server";
 
-import { MainProductCategory, Product } from "@/types";
+import { BestProduct, MainProductCategory, Product } from "@/types";
 import Fetch from "../fetch";
 
 export async function GetMainProductCategory(): Promise<MainProductCategory[]> {
@@ -10,10 +10,13 @@ export async function GetMainProductCategory(): Promise<MainProductCategory[]> {
   );
 }
 
-export async function GetMainBestProduct(): Promise<Product[]> {
-  return Fetch<Product[]>("/api/front/v1/pages/main/main-product-best-item", {
-    next: { revalidate: 60 },
-  });
+export async function GetMainBestProduct(): Promise<BestProduct[]> {
+  return Fetch<BestProduct[]>(
+    "/api/front/v1/pages/main/main-product-best-item",
+    {
+      next: { revalidate: 60 },
+    }
+  );
 }
 
 export async function GetMainNewProduct(): Promise<Product[]> {
