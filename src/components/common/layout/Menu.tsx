@@ -1,5 +1,5 @@
 import GetBase from "@/lib/api/base";
-import Category from "./Category";
+import Category from "../element/Category";
 
 export default async function Menu() {
   const data = await GetBase();

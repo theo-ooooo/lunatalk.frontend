@@ -1,4 +1,4 @@
-import Menu from "@/components/common/Menu";
+import Menu from "@/components/common/layout/Menu";
 
 export default function Layout({
   children,

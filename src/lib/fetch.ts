@@ -10,9 +10,7 @@ export default async function Fetch<T>(url: string, options: RequestInit) {
     Accept: "application/json",
   };
 
-  if (options.headers) {
-    Object.assign(headers, options.headers);
-  }
+  options.headers = Object.assign(headers, options.headers);
 
   try {
     const response = await fetch(
