@@ -17,9 +17,14 @@ export default function Product(product: ProductData) {
           <span className='text-[#ff5280] font-medium'>
             {product.discountPercent}%
           </span>
-          <span className='font-medium text-[#1b202a]'>{product.price}</span>
+          <span className='font-medium text-[#1b202a]'>
+            {product.price.toLocaleString()}원
+          </span>
         </div>
         <span className='text-xs text-[#1b202a]'>{product?.color[0]}</span>
+        <span className='text-xs text-[#1b202a]'>
+          리뷰 ({product.reviewCount})
+        </span>
       </div>
     </Link>
   );
