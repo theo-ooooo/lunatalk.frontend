@@ -1,24 +1,9 @@
 "use server";
 
-import {
-  ApiBestProduct,
-  ApiMainProductCategory,
-  ApiNewProduct,
-  ApiSpecificProduct,
-} from "@/types/api/main";
+import { ApiMainProductCategory, ApiSpecificProduct } from "@/types/api/main";
 import Fetch from "../fetch";
-import {
-  BestProduct,
-  MainCategory,
-  NewProduct,
-  Product,
-  SpecificProduct,
-} from "@/types/processed/main";
-import {
-  ConvertMainCategoryList,
-  ConvertProduct,
-  ConvertProductList,
-} from "@/convert/main";
+import { MainCategory, Product, SpecificProduct } from "@/types/processed/main";
+import { ConvertMainCategoryList, ConvertProduct } from "@/convert/main";
 
 export async function GetMainProductCategory(): Promise<MainCategory[]> {
   try {

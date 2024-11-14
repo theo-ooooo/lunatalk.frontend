@@ -3,9 +3,9 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import cn from "clsx";
-import { Categories } from "@/types/api/base";
+import { Category as CategoryData } from "@/types/processed/base";
 
-export default function Category({ uuid, name }: Categories) {
+export default function Category({ uuid, name }: CategoryData) {
   const params = useParams();
 
   const [active, setActive] = useState(false);
