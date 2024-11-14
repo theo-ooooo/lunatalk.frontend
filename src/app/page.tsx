@@ -1,38 +1,13 @@
-import { GetMainProductCategory } from "@/lib/api/main";
-import Link from "next/link";
-import Image from "next/image";
 import BestProduct from "@/components/main/BestProduct";
+import NewProduct from "@/components/main/NewProduct";
+import Category from "@/components/main/Category";
 
-export default async function Home() {
-  const category = await GetMainProductCategory();
+export default function Home() {
   return (
-    <section className='flex flex-col'>
-      <article className='flex flex-row gap-8 p-4 py-10 justify-center'>
-        {category.map((c) => (
-          <Link
-            href={`/category/${c.uuid}`}
-            key={c.uuid}
-            className='flex flex-col items-center'
-          >
-            {c.image?.url ? (
-              <Image
-                src={c.image.url}
-                alt={c.name}
-                width={c.image.width}
-                height={c.image.height}
-                className='w-16 h-16 rounded-full bg-slate-100'
-              />
-            ) : (
-              <div className='w-16 h-16 rounded-full'></div>
-            )}
-
-            <span className='text-[13px] mt-1 text-nowrap font-medium tracking-tighter'>
-              {c.name}
-            </span>
-          </Link>
-        ))}
-      </article>
+    <section className='flex flex-col gap-10'>
+      <Category />
       <BestProduct />
+      <NewProduct />
     </section>
   );
 }

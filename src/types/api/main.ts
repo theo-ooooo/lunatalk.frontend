@@ -1,4 +1,4 @@
-export interface MainProductCategory {
+export interface ApiMainProductCategory {
   name: string;
   image: {
     file_name: string;
@@ -9,7 +9,7 @@ export interface MainProductCategory {
   uuid: string;
 }
 
-export interface Product {
+export interface ApiProduct {
   badge: string[];
   color: {
     id: number;
@@ -35,7 +35,7 @@ export interface Product {
   uuid: string;
 }
 
-export interface BestProduct {
+export interface ApiSpecificProduct {
   uuid: string;
-  product: Product;
+  product: ApiProduct;
 }

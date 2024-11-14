@@ -4,13 +4,14 @@ const FooterItem = [
   { key: "사업자등록번호", value: "130-86-59053" },
   { key: "통신판매업신고번호", value: "2011-경기부천-1500" },
   { key: "개인정보관리책임자", value: "강대용" },
-  { key: "전화번호", value: "031-634-1234" },
+  { key: "전화번호", value: "032-684-1565" },
+  { key: "영업시간", value: "10:00 ~ 18:00(점심시간: 13:00 ~ 14:00)" },
   { key: "이메일", value: "lunatalk_helper@gmail.com" },
 ];
 
 export default function Footer() {
   return (
-    <footer className='bg-[#f5f6f8]'>
+    <footer className='bg-[#f5f6f8] pb-10'>
       <div className='px-4 py-8'>
         <h2 className='text-[#a1a9ad] font-bold mb-4 text-sm leading-3'>
           (주)서진산업 사업자 정보

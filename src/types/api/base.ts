@@ -1,21 +1,21 @@
-export interface CodeItem {
+export interface ApiCodeItem {
   code_id: string;
   code_name: string;
 }
 
-export interface Codes {
+export interface ApiCodes {
   code_name: { [key: string]: string };
   code_group: {
-    [key: string]: CodeItem[];
+    [key: string]: ApiCodeItem[];
   };
 }
 
-export interface Categories {
+export interface ApiCategory {
   uuid: string;
   name: string;
 }
 
-export interface AppBase {
-  codes: Codes;
-  product_category: Categories[];
+export interface ApiAppBase {
+  codes: ApiCodes;
+  product_category: ApiCategory[];
 }

@@ -1,4 +1,4 @@
-import { Product as ProductData } from "@/types/api/main";
+import { Product as ProductData } from "@/types/processed/main";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +6,7 @@ export default function Product(product: ProductData) {
   return (
     <Link href={`/product/${product.uuid}`}>
       <Image
-        src={product.rep_image.url}
+        src={product.repImage}
         alt={product.name}
         width={600}
         height={600}
@@ -15,16 +15,11 @@ export default function Product(product: ProductData) {
         <span className='text-[#474e5c]'>{product.name}</span>
         <div className='flex gap-1 text-sm mb-1'>
           <span className='text-[#ff5280] font-medium'>
-            {((product.original_price.number - product.price.number) /
-              product.original_price.number) *
-              100}
-            %
+            {product.discountPercent}%
           </span>
-          <span className='font-medium text-[#1b202a]'>
-            {product.price.string}
-          </span>
+          <span className='font-medium text-[#1b202a]'>{product.price}</span>
         </div>
-        <span className='text-xs text-[#1b202a]'>{product?.color[0].name}</span>
+        <span className='text-xs text-[#1b202a]'>{product?.color[0]}</span>
       </div>
     </Link>
   );

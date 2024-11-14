@@ -1,8 +1,15 @@
 "use server";
 
-import { AppBase } from "@/types/api/base";
+import { ApiAppBase } from "@/types/api/base";
 import Fetch from "../fetch";
+import { AppBase } from "@/types/processed/base";
+import { ConvertBase } from "@/convert/base";
 
 export default async function GetBase(): Promise<AppBase> {
-  return Fetch<AppBase>("/api/system/base-data", {});
+  try {
+    const data = await Fetch<ApiAppBase>("/api/system/base-data", {});
+    return ConvertBase(data);
+  } catch (e) {
+    throw e;
+  }
 }
