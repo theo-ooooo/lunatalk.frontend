@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import cn from "clsx";
-import { Categories } from "@/lib/api/base.interface";
+import { Categories } from "@/types/api/base";
 
 export default function Category({ uuid, name }: Categories) {
   const params = useParams();
