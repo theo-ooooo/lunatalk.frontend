@@ -1,4 +1,6 @@
 import BackHeader from "@/components/common/layout/BackHeader";
+import BackHeaderSkeleton from "@/components/common/layout/BackHeaderSkeleton";
+import { Suspense } from "react";
 
 export default function Layout({
   children,
@@ -7,7 +9,10 @@ export default function Layout({
 }>) {
   return (
     <div>
-      <BackHeader /> {children}
+      <Suspense fallback={<BackHeaderSkeleton />}>
+        <BackHeader />
+      </Suspense>
+      {children}
     </div>
   );
 }

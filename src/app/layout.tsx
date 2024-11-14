@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/common/layout/Header";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import Footer from "@/components/common/layout/Footer";
 import Navigation from "@/components/common/layout/Navigation";
 export const metadata: Metadata = {
