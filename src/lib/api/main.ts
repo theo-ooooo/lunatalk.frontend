@@ -2,8 +2,9 @@
 
 import { ApiMainProductCategory, ApiSpecificProduct } from "@/types/api/main";
 import Fetch from "../fetch";
-import { MainCategory, Product, SpecificProduct } from "@/types/processed/main";
-import { ConvertMainCategoryList, ConvertProduct } from "@/convert/main";
+import { MainCategory, SpecificProduct } from "@/types/processed/main";
+import { ConvertMainCategoryList } from "@/convert/main";
+import { ConvertProduct } from "@/convert/product";
 
 export async function GetMainProductCategory(): Promise<MainCategory[]> {
   try {
