@@ -1,4 +1,4 @@
-import { Response } from "@/types";
+import { Response } from "@/types/api/common";
 
 export default async function Fetch<T>(url: string, options: RequestInit) {
   if (!url) {

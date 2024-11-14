@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { BiSearch, BiSearchAlt } from "react-icons/bi";
 import { BsPerson, BsPersonFill } from "react-icons/bs";
 import { IoMdHome } from "react-icons/io";

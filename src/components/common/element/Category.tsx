@@ -1,9 +1,9 @@
 "use client";
-import { Categories } from "@/types";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import cn from "clsx";
+import { Categories } from "@/lib/api/base.interface";
 
 export default function Category({ uuid, name }: Categories) {
   const params = useParams();

@@ -1,6 +1,6 @@
 "use server";
 
-import { BestProduct, MainProductCategory, Product } from "@/types";
+import { BestProduct, MainProductCategory, Product } from "@/types/api/main";
 import Fetch from "../fetch";
 
 export async function GetMainProductCategory(): Promise<MainProductCategory[]> {
