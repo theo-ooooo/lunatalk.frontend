@@ -1,4 +1,4 @@
-import Menu from "@/components/common/layout/Menu";
+import BackHeader from "@/components/common/layout/BackHeader";
 
 export default function Layout({
   children,
@@ -7,7 +7,7 @@ export default function Layout({
 }>) {
   return (
     <div>
-      <Menu /> {children}
+      <BackHeader /> {children}
     </div>
   );
 }

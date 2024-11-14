@@ -8,7 +8,6 @@ export default async function Menu() {
 
   return (
     <div>
-      <BackHeader />
       <ul className='grid grid-cols-4 text-center h-10 items-center font-semibold'>
         {data.productCategory.map((category) => (
           <Category key={category.uuid} {...category} />
