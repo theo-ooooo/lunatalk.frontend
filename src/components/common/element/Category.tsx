@@ -25,7 +25,7 @@ export default function Category({ uuid, name }: CategoryData) {
         { "font-thin text-[#bbb]": !active }
       )}
     >
-      <Link href={`/category/${uuid}`}>{name}</Link>
+      <Link href={`/category/${uuid}?title=${name}`}>{name}</Link>
     </li>
   );
 }

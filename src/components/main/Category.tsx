@@ -9,7 +9,7 @@ export default async function Category() {
     <article className='flex flex-row gap-8 p-4 py-10 justify-center'>
       {categories.map((c) => (
         <Link
-          href={`/category/${c.uuid}`}
+          href={`/category/${c.uuid}?title=${c.name}`}
           key={c.uuid}
           className='flex flex-col items-center'
         >

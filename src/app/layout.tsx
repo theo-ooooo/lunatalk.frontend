@@ -17,7 +17,6 @@ export default function RootLayout({
     <html lang='ko'>
       <body>
         <main className='max-w-[600px] mx-auto'>
-          <Header />
           {children}
           <Footer />
           <Navigation />
