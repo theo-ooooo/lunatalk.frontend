@@ -7,8 +7,8 @@ export default async function Menu() {
   const data = await GetBase();
 
   return (
-    <div>
-      <ul className='grid grid-cols-4 text-center h-10 items-center font-semibold'>
+    <div className='sticky top-[44px] bg-white'>
+      <ul className='grid grid-cols-4 text-center h-10 items-center font-semibold '>
         {data.productCategory.map((category) => (
           <Category key={category.uuid} {...category} />
         ))}

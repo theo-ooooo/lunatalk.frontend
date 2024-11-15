@@ -25,7 +25,7 @@ export default function BackHeader() {
   const title = fixTitleItem?.title || params.get("title") || "";
 
   return (
-    <div className='flex items-center justify-center h-11'>
+    <div className='flex items-center justify-center h-11 sticky top-0 bg-white'>
       <div
         className='mr-auto flex-shrink-0 z-10 cursor-pointer'
         onClick={() => router.back()}
