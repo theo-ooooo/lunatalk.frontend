@@ -28,6 +28,14 @@ const navi = [
     component: <BsPerson size={24} />,
     activeComponent: <BsPersonFill size={24} />,
     href: "/mypage",
+    activeHref: [
+      "/auth/login",
+      "/auth/login/email",
+      "/auth/register",
+      "/auth/find/login_id",
+      "/auth/find/password",
+      "/mypage",
+    ],
   },
 ];
 
