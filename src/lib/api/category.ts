@@ -11,7 +11,7 @@ export async function GetCategoryProduct(
   try {
     const data = await Fetch<ApiCategoryProduct>(
       `/api/front/v1/pages/product-category/${uuid}/list`,
-      {}
+      { next: { revalidate: 60 } }
     );
 
     return ConvertCategoryProduct(data);
