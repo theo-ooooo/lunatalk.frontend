@@ -13,6 +13,7 @@ const fixTitle = [
   { pathname: "/search", title: "검색" },
   { pathname: "/cart", title: "장바구니" },
   { pathname: "/mypage", title: "마이페이지" },
+  { pathname: "/auth/login", title: "로그인" },
 ];
 
 export default function BackHeader() {
