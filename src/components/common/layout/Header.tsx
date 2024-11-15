@@ -15,12 +15,6 @@ export default function Header() {
         <Link href={"/search"}>
           <BiSearch size={20} />
         </Link>
-        {/* <Link href={"/cart"}>
-          <PiBagSimpleBold size={22} />
-        </Link>
-        <Link href={"/mypage"}>
-          <BiSolidUser size={22} />
-        </Link> */}
       </div>
     </header>
   );

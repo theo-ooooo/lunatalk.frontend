@@ -7,16 +7,7 @@ import { Category as CategoryData } from "@/types/processed/base";
 
 export default function Category({ uuid, name }: CategoryData) {
   const params = useParams();
-
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    if (params?.uuid === uuid) {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
-  }, [params, uuid]);
+  const active = params?.uuid === uuid;
 
   return (
     <li
