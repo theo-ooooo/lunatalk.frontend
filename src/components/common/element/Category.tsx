@@ -12,11 +12,17 @@ export default function Category({ uuid, name }: CategoryData) {
   return (
     <li
       className={cn(
-        { "font-bold text-black": active },
+        "w-full h-full",
+        { "font-bold text-black border-b-2 border-black": active },
         { "font-thin text-[#bbb]": !active }
       )}
     >
-      <Link href={`/category/${uuid}?title=${name}`}>{name}</Link>
+      <Link
+        href={`/category/${uuid}?title=${name}`}
+        className='flex items-center justify-center w-full h-full'
+      >
+        {name}
+      </Link>
     </li>
   );
 }

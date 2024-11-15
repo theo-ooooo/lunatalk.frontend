@@ -25,7 +25,10 @@ export default function BackHeader() {
 
   return (
     <div className='flex items-center justify-center h-11'>
-      <div className='mr-auto flex-shrink-0 z-10' onClick={() => router.back()}>
+      <div
+        className='mr-auto flex-shrink-0 z-10 cursor-pointer'
+        onClick={() => router.back()}
+      >
         <MdKeyboardArrowLeft size={30} />
       </div>
       <div className='absolute left-0 right-0 text-center max-w-[600px] mx-auto'>
