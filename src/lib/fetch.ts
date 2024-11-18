@@ -8,6 +8,7 @@ export default async function Fetch<T>(url: string, options: RequestInit) {
   const headers = {
     "request-client-type": "0100010",
     Accept: "application/json",
+    "Content-Type": "application/json",
   };
 
   options.headers = Object.assign(headers, options.headers);

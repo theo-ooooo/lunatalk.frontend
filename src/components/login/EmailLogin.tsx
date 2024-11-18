@@ -1,28 +1,88 @@
 "use client";
-
-import { useSearchParams, useRouter } from "next/navigation";
-import { MdOutlineMail } from "react-icons/md";
+import { LoginAction } from "@/actions/login";
+import Link from "next/link";
+import { useEffect } from "react";
+import { useFormState } from "react-dom";
 
 export default function EmailLogin() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const beforeUrl = searchParams.get("redirect");
+  const [state, formAction, isPending] = useFormState(LoginAction, null);
 
-  const onClickEmailLogin = () => {
-    let moveUrl = `/auth/login/email`;
-
-    if (beforeUrl) {
-      moveUrl += `?redirect=${beforeUrl}`;
+  useEffect(() => {
+    if (state && !state.status) {
+      alert(state.error);
     }
-    router.push(moveUrl);
-  };
+  }, [state]);
   return (
-    <button
-      onClick={onClickEmailLogin}
-      className='relative border-[1px] border-[#d2d5d6] rounded-full py-3 w-full tracking-tight font-semibold'
-    >
-      <MdOutlineMail size={22} className='absolute left-4' />
-      <span>이메일로 로그인</span>
-    </button>
+    <form action={formAction}>
+      <div className='h-svh p-3 flex flex-col gap-5'>
+        <div>
+          <h2 className='text-xl font-bold tracking-tight mb-2'>
+            이메일로 로그인 하기
+          </h2>
+        </div>
+        <div className='flex flex-col gap-4'>
+          <div className='flex flex-col gap-1'>
+            <label htmlFor='email' className='text-xs tracking-tight'>
+              이메일 주소
+            </label>
+            <input
+              type='text'
+              id='loginId'
+              name='loginId'
+              className='w-full border-2 rounded-md px-4 h-12 outline-none'
+              placeholder='아이디'
+              required
+              disabled={isPending}
+            />
+          </div>
+          <div>
+            <label htmlFor='password' className='text-xs tracking-tight'>
+              비밀번호
+            </label>
+            <input
+              type='password'
+              id='password'
+              name='password'
+              placeholder='비밀번호'
+              className='w-full border-2 rounded-md px-4 h-12 outline-none'
+              required
+              disabled={isPending}
+            />
+          </div>
+        </div>
+        <div>
+          <button
+            type='submit'
+            className='w-full bg-black text-white rounded-full px-4 h-12'
+          >
+            {isPending ? "..." : "로그인"}
+          </button>
+        </div>
+        <div>
+          <div className='flex items-center gap-8 justify-end'>
+            <Link
+              href={"/auth/find/login_id"}
+              className='text-xs tracking-tight'
+            >
+              아이디 찾기
+            </Link>
+            <Link
+              href={"/auth/find/password"}
+              className='text-xs tracking-tight'
+            >
+              비밀번호 찾기
+            </Link>
+          </div>
+        </div>
+        <div className='flex items-center gap-1 justify-center'>
+          <span className='text-xs text-[#828a8f]'>
+            아직 루나톡 계정이 없으신가요?
+          </span>
+          <Link href={"/auth/register"} className='text-xs tracking-tight'>
+            회원가입하기
+          </Link>
+        </div>
+      </div>
+    </form>
   );
 }

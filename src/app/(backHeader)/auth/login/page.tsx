@@ -1,4 +1,4 @@
-import EmailLogin from "@/components/login/EmailLogin";
+import EmailLoginButton from "@/components/login/EmailLoginButton";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -9,7 +9,7 @@ export default function Page() {
       <Image src={"/logo.webp"} alt='logo' width={110} height={100} />
       <div className='flex justify-center flex-col w-full max-w-[360px] px-5'>
         <Suspense fallback={<div>Loading...</div>}>
-          <EmailLogin />
+          <EmailLoginButton />
         </Suspense>
       </div>
       <div className='flex flex-row items-center justify-center w-full max-w-[360px] text-sm tracking-tight text-[#4F5558 mb-32'>
