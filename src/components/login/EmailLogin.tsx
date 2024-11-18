@@ -2,10 +2,12 @@
 import { LoginAction } from "@/actions/login";
 import Link from "next/link";
 import { useEffect } from "react";
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 
 export default function EmailLogin() {
-  const [state, formAction, isPending] = useFormState(LoginAction, null);
+  const [state, formAction] = useFormState(LoginAction, null);
+
+  const { pending: isPending } = useFormStatus();
 
   useEffect(() => {
     if (state && !state.status) {
