@@ -10,15 +10,15 @@ export default async function Fetch<T>(url: string, options: RequestInit) {
     "request-client-type": "0100010",
     Accept: "application/json",
     "Content-Type": "application/json",
+    ...(options.headers || {}),
   };
-
-  options.headers = Object.assign(headers, options.headers);
 
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_API_URL}${url}`,
       {
         ...options,
+        headers,
       }
     );
 

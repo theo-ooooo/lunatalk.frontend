@@ -1,4 +1,4 @@
-import EmailLoginButton from "@/components/login/EmailLoginButton";
+import EmailLoginButton from "@/components/auth/EmailLoginButton";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";

@@ -24,3 +24,10 @@ export default async function Login({
     refreshToken: data.refresh_token,
   };
 }
+
+export async function Logout() {
+  await Fetch("/api/front/v1/auth/logout", {
+    method: "DELETE",
+  });
+  return true;
+}

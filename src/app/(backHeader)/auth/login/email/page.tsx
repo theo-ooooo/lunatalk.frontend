@@ -1,4 +1,4 @@
-import EmailLogin from "@/components/login/EmailLogin";
+import EmailLogin from "@/components/auth/EmailLogin";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 

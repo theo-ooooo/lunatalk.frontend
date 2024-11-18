@@ -1,3 +1,4 @@
+import EmailLogoutButton from "@/components/auth/EmailLogoutButton";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -9,5 +10,9 @@ export default function Page() {
   if (!token) {
     redirect("/auth/login");
   }
-  return <div>mypage</div>;
+  return (
+    <div>
+      <EmailLogoutButton />
+    </div>
+  );
 }
