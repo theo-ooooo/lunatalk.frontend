@@ -1,21 +1,15 @@
 "use server";
 import { Response } from "@/types/api/common";
-import { cookies } from "next/headers";
 
 export default async function Fetch<T>(url: string, options: RequestInit) {
   if (!url) {
     throw new Error("url is required");
   }
 
-  const cookieStore = cookies();
-
-  const accessToken = cookieStore.get("accessToken")?.value;
-
   const headers = {
     "request-client-type": "0100010",
     Accept: "application/json",
     "Content-Type": "application/json",
-    Authorization: accessToken ? `Bearer ${accessToken}` : undefined,
   };
 
   options.headers = Object.assign(headers, options.headers);
