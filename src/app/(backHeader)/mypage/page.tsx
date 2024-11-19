@@ -8,7 +8,7 @@ export default function Page() {
   const token = cookieStore.get("accessToken");
 
   if (!token) {
-    redirect("/auth/login");
+    redirect("/auth/login?redirect=/mypage");
   }
   return (
     <div>

@@ -3,6 +3,8 @@
 import { ApiAuthLogin } from "@/types/api/auth";
 import Fetch from "../fetch";
 import { AuthLogin } from "@/types/processed/auth";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default async function Login({
   loginId,
@@ -26,8 +28,23 @@ export default async function Login({
 }
 
 export async function Logout() {
+  const cookieStore = cookies();
+
+  const accessToken = cookieStore.get("accessToken")?.value;
+
+  if (!accessToken) {
+    redirect("/mypage");
+  }
+
   await Fetch("/api/front/v1/auth/logout", {
     method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
   });
-  return true;
+
+  cookieStore.delete("accessToken");
+  cookieStore.delete("refreshToken");
+
+  redirect("/mypage");
 }

@@ -8,8 +8,6 @@ export async function LoginAction(_: any, formData: FormData) {
     const loginId = formData.get("loginId")?.toString();
     const password = formData.get("password")?.toString();
 
-    console.log(loginId, password);
-
     if (!loginId || !password) {
       return {
         status: false,
