@@ -23,7 +23,9 @@ export default async function Fetch<T>(url: string, options: RequestInit) {
     );
 
     if (!response.ok) {
-      throw new Error(`Fetch error ${url} ${response.statusText}`);
+      const result: { error_message?: string; message?: string } =
+        await response.json();
+      throw result.error_message ?? result?.message;
     }
 
     const result: Response<T> = await response.json();

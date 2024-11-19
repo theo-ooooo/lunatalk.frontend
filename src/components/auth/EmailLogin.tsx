@@ -1,8 +1,10 @@
 "use client";
 import { LoginAction } from "@/actions/login";
+import CustomToast from "@/lib/toast";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useFormState, useFormStatus } from "react-dom";
+import { toast } from "react-toastify";
 
 export default function EmailLogin() {
   const [state, formAction] = useFormState(LoginAction, null);
@@ -11,7 +13,7 @@ export default function EmailLogin() {
 
   useEffect(() => {
     if (state && !state.status) {
-      alert(state.error);
+      CustomToast("error", state.error);
     }
   }, [state]);
   return (
