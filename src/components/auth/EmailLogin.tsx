@@ -2,10 +2,9 @@
 import { LoginAction } from "@/actions/login";
 import CustomToast from "@/lib/toast";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useFormState, useFormStatus } from "react-dom";
-import { toast } from "react-toastify";
-
 export default function EmailLogin() {
   const [state, formAction] = useFormState(LoginAction, null);
 
