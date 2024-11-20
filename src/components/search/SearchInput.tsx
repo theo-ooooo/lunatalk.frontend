@@ -15,6 +15,8 @@ export default function SearchInput() {
     if (q) {
       const decodeKeyword = Buffer.from(q, "base64").toString();
       setSearchText(decodeKeyword);
+    } else {
+      setSearchText("");
     }
   }, [q, setSearchText]);
 
