@@ -22,8 +22,8 @@ export default async function Login({
   });
 
   return {
-    accessToken: data.access_token,
-    refreshToken: data.refresh_token,
+    accessToken: data?.access_token || "",
+    refreshToken: data?.refresh_token || "",
   };
 }
 

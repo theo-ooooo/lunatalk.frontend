@@ -13,9 +13,10 @@ export default function SearchInput() {
 
   useEffect(() => {
     if (q) {
-      setSearchText(q);
+      const decodeKeyword = Buffer.from(q, "base64").toString();
+      setSearchText(decodeKeyword);
     }
-  }, []);
+  }, [q, setSearchText]);
 
   return (
     <div className='flex bg-[#f5f6f8] w-full flex-row items-center px-2'>

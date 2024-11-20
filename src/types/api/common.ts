@@ -1,5 +1,6 @@
 export interface Response<T> {
-  message: string;
+  message?: string;
+  error_message?: string;
   result: T;
 }
 

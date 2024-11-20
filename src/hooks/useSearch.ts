@@ -16,8 +16,9 @@ export default function useSearch() {
 
   const onEnter = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
+      const encode = Buffer.from(searchText).toString("base64");
       if (e.key === "Enter") {
-        router.push(`/search?q=${searchText}`);
+        router.push(`/search?q=${encode}`);
       }
     },
     [router, searchText]
