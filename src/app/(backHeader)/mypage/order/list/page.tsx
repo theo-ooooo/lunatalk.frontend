@@ -2,6 +2,7 @@ import Empty from "@/components/common/element/Empty";
 import OrderProduct from "@/components/common/element/form/order/Product";
 import MyOrderSearchBar from "@/components/mypage/MyOrderSearchBar";
 import { MyOrderData } from "@/lib/api/my";
+import { Suspense } from "react";
 
 export default async function Page({
   searchParams,
@@ -23,7 +24,9 @@ export default async function Page({
 
   return (
     <div className='flex gap-3 flex-col'>
-      <MyOrderSearchBar />
+      <Suspense fallback={<div>...</div>}>
+        <MyOrderSearchBar />
+      </Suspense>
       {data.length ? (
         data.map((item) => <OrderProduct key={item.uuid} {...item} />)
       ) : (
