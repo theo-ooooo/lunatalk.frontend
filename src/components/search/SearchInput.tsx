@@ -10,11 +10,11 @@ export default function SearchInput() {
   const { searchText, onChange, onReset, setSearchText, onEnter } = useSearch();
   const searchParams = useSearchParams();
   const q = searchParams.get("q");
-  const ref = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (ref?.current !== null) {
-      ref.current.focus();
+    if (inputRef?.current !== null) {
+      inputRef.current.focus();
     }
   }, []);
 
@@ -38,7 +38,7 @@ export default function SearchInput() {
         value={searchText}
         onChange={onChange}
         onKeyDown={onEnter}
-        ref={ref}
+        ref={inputRef}
       />
       {searchText.length > 0 ? (
         <div onClick={() => onReset()}>
