@@ -21,7 +21,7 @@ export default function useSearch() {
         router.push(`/search?q=${encode}`);
       }
     },
-    [router, searchText]
+    [searchText]
   );
   return {
     searchText,

@@ -1,8 +1,5 @@
-"use client";
-
 import { SearchProductsByName } from "@/lib/api/search";
 import ProductList from "../common/element/ProductList";
-import { useSearchParams } from "next/navigation";
 
 function Empty() {
   return (
