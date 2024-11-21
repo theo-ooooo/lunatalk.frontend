@@ -1,4 +1,5 @@
 import { ApiCodeItem } from "./base";
+import { ApiImage } from "./common";
 
 export interface ApiMyInformation {
   uuid: string;
@@ -29,4 +30,13 @@ export interface ApiMyInformation {
     step2: string;
     step3: string;
   };
+}
+
+export interface ApiOrderInformation {
+  uuid: string;
+  state: ApiCodeItem;
+  order_name: string;
+  order_price: { number: number; string: string };
+  created_at: { type1: string; type2: string; type3: string };
+  rep_image: ApiImage;
 }

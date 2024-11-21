@@ -3,17 +3,12 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
-// const fixTitle = {
-//   "/": "메인",
-//   "/search": "검색",
-//   "/cart": "장바구니",
-//   "/mypage": "마이페이지",
-// };
 const fixTitle = [
   { pathname: "/search", title: "검색" },
   { pathname: "/cart", title: "장바구니" },
   { pathname: "/mypage", title: "마이페이지" },
   { pathname: "/auth/login", title: "로그인" },
+  { pathname: "/mypage/order/list", title: "주문정보" },
 ];
 
 export default function BackHeader() {

@@ -19,13 +19,16 @@ export interface ApiProduct {
     number: number;
     string: string;
   };
-  rep_image: {
-    file_name: string;
-    url: string;
-  };
+  rep_image: ApiImage;
   review_count: {
     number: number;
     string: string;
   };
   uuid: string;
+}
+
+export interface ApiImage {
+  file_name: string;
+  url: string;
+  id?: number;
 }

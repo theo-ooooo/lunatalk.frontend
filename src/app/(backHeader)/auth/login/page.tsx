@@ -1,9 +1,23 @@
 import EmailLoginButton from "@/components/auth/EmailLoginButton";
+import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
-export default function Page() {
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { redirect?: string };
+}) {
+  const cookieStore = cookies();
+
+  const accessToken = cookieStore.get("accessToken");
+
+  if (accessToken) {
+    redirect(searchParams?.redirect || "/");
+  }
+
   return (
     <div className='w-full  flex h-svh items-center justify-center flex-col gap-10'>
       <Image src={"/logo.webp"} alt='logo' width={110} height={100} />

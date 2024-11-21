@@ -4,3 +4,12 @@ export interface MyInformation {
   name: string;
   email: string;
 }
+
+export interface MyOrderInformation {
+  uuid: string;
+  state: string;
+  orderName: string;
+  orderPrice: number;
+  createdAt: string;
+  imageUrl: string;
+}

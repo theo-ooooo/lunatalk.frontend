@@ -11,7 +11,7 @@ export default function MyBottomArea() {
       <div>
         <MyPageBoxButton
           title='주문정보'
-          onClick={() => router.push("/mypage/order")}
+          onClick={() => router.push("/mypage/order/list")}
         />
         <MyPageBoxButton
           title='장바구니'

@@ -1,6 +1,5 @@
 import { GetMainBestProduct } from "@/lib/api/main";
-import Product from "../common/element/Product";
-import ProductList from "../common/element/ProductList";
+import ProductList from "../common/element/form/card/ProductList";
 
 export default async function BestProduct() {
   const data = await GetMainBestProduct();

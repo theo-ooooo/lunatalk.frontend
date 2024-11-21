@@ -1,5 +1,5 @@
 import { SearchProductsByName } from "@/lib/api/search";
-import ProductList from "../common/element/ProductList";
+import ProductList from "../common/element/form/card/ProductList";
 
 function Empty() {
   return (

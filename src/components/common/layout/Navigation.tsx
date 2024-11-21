@@ -35,6 +35,7 @@ const navi = [
       "/auth/find/login_id",
       "/auth/find/password",
       "/mypage",
+      "/mypage/order/list",
     ],
   },
 ];

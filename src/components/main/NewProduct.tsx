@@ -1,6 +1,5 @@
 import { GetMainNewProduct } from "@/lib/api/main";
-import Product from "../common/element/Product";
-import ProductList from "../common/element/ProductList";
+import ProductList from "../common/element/form/card/ProductList";
 
 export default async function NewProduct() {
   const data = await GetMainNewProduct();
