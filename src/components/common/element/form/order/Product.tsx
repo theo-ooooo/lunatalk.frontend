@@ -25,9 +25,9 @@ export default function OrderProduct({
             <div className='font-semibold'>{orderPrice.toLocaleString()}원</div>
           </div>
         </div>
-        <div className='w-full flex items-center justify-center border py-2 text-xs'>
+        {/* <div className='w-full flex items-center justify-center border py-2 text-xs'>
           <button>상세보기</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
